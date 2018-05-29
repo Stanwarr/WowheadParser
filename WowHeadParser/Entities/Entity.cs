@@ -1,6 +1,3 @@
-﻿/*
- * * Created by Traesh for AshamaneProject (https://github.com/AshamaneProject)
- */
 using Sql;
 using System;
 using System.Collections.Generic;
