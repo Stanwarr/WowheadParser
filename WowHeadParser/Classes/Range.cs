@@ -1,6 +1,3 @@
-﻿/*
- * * Created by Traesh for AshamaneProject (https://github.com/AshamaneProject)
- */
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -76,9 +73,9 @@ namespace WowHeadParser
             catch (Exception ex)
             {
                 if (ex.Message.IndexOf("404") != -1)
-                    Console.WriteLine("Introuvable");
+                    Console.WriteLine("Not found!");
                 else
-                    Console.WriteLine("Erreur");
+                    Console.WriteLine("Error!");
             }
             ++m_parsedEntitiesCount;
         }
@@ -88,7 +85,7 @@ namespace WowHeadParser
             if (m_parsedEntitiesCount > m_entityTodoCount)
                 return;
 
-            Console.WriteLine("Nombre effectué : " + m_parsedEntitiesCount);
+            Console.WriteLine("Processed : " + m_parsedEntitiesCount);
 
             float percent = ((float)m_index / (float)m_entityTodoCount) * 100;
 
