@@ -242,7 +242,7 @@ namespace WowHeadParser
                 // Marché Noir
                 case 5:
                 {
-                    selectList.Items.Add("Debug");
+                    selectList.Items.Add("Debug.");
                     break;
                 }
             }
