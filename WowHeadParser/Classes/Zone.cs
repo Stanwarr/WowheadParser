@@ -1,6 +1,3 @@
-﻿/*
- * * Created by Traesh for AshamaneProject (https://github.com/AshamaneProject)
- */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,7 +100,7 @@ namespace WowHeadParser
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erreur");
+                Console.WriteLine("Error!");
             }
             ++m_parsedEntitiesCount;
         }
@@ -113,7 +110,7 @@ namespace WowHeadParser
             if (m_parsedEntitiesCount > m_array.Count)
                 return;
 
-            Console.WriteLine("Nombre effectué : " + m_parsedEntitiesCount);
+            Console.WriteLine("Processed : " + m_parsedEntitiesCount);
 
             float percent = ((float)m_index / (float)m_array.Count) * 100;
 
