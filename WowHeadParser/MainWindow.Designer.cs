@@ -82,7 +82,7 @@
             this.labelDe.Name = "labelDe";
             this.labelDe.Size = new System.Drawing.Size(21, 13);
             this.labelDe.TabIndex = 5;
-            this.labelDe.Text = "De";
+            this.labelDe.Text = "From";
             // 
             // labelA
             // 
@@ -91,7 +91,7 @@
             this.labelA.Name = "labelA";
             this.labelA.Size = new System.Drawing.Size(13, 13);
             this.labelA.TabIndex = 6;
-            this.labelA.Text = "à";
+            this.labelA.Text = "to";
             // 
             // button1
             // 
@@ -99,7 +99,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Démarrer";
+            this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -156,7 +156,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Temps restant :";
+            this.label1.Text = "Time left :";
             // 
             // MainWindow
             // 
