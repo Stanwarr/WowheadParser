@@ -1,6 +1,3 @@
-﻿/*
- * Created by Traesh (http://www.farahlon.com)
- */
 using Newtonsoft.Json;
 using Sql;
 using System;
@@ -238,7 +235,7 @@ namespace WowHeadParser.Entities
             }
 
             // Locales
-            if (IsCheckboxChecked("locale"))
+            if (IsCheckboxChecked("Locale."))
             {
                 int localeIndex = Properties.Settings.Default.localIndex;
 
@@ -260,7 +257,7 @@ namespace WowHeadParser.Entities
                 }
             }
 
-            if (IsCheckboxChecked("vendor") && m_npcVendorDatas != null)
+            if (IsCheckboxChecked("Vendor.") && m_npcVendorDatas != null)
             {
                 m_npcVendorBuilder = new SqlBuilder("npc_vendor", "entry", SqlQueryType.DeleteInsert);
                 m_npcVendorBuilder.SetFieldsNames("slot", "item", "maxcount", "incrtime", "ExtendedCost", "type", "PlayerConditionID");
@@ -271,7 +268,7 @@ namespace WowHeadParser.Entities
                 returnSql += m_npcVendorBuilder.ToString() + "\n";
             }
 
-            if (IsCheckboxChecked("loot") && m_creatureLootDatas != null)
+            if (IsCheckboxChecked("Loot.") && m_creatureLootDatas != null)
             {
                 m_creatureLootBuilder = new SqlBuilder("creature_loot_template", "entry", SqlQueryType.InsertIgnore);
                 m_creatureLootBuilder.SetFieldsNames("item", "ChanceOrQuestChance", "lootmode", "groupid", "mincountOrRef", "maxcount", "itemBonuses");
@@ -283,7 +280,7 @@ namespace WowHeadParser.Entities
                 returnSql += m_creatureLootBuilder.ToString() + "\n";
             }
 
-            if (IsCheckboxChecked("skinning") && m_creatureSkinningDatas != null)
+            if (IsCheckboxChecked("Skinning.") && m_creatureSkinningDatas != null)
             {
                 m_creatureSkinningBuilder = new SqlBuilder("skinning_loot_template", "entry", SqlQueryType.InsertIgnore);
                 m_creatureSkinningBuilder.SetFieldsNames("item", "ChanceOrQuestChance", "lootmode", "groupid", "mincountOrRef", "maxcount", "itemBonuses");
