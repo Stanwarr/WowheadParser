@@ -1,6 +1,3 @@
-﻿/*
- * * Created by Traesh for AshamaneProject (https://github.com/AshamaneProject)
- */
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -40,13 +37,13 @@ namespace WowHeadParser
             comboBoxEntity.Items.Add("Zone");
             comboBoxEntity.Items.Add("BlackMarket");
 
-            comboBoxLocale.Items.Add("www");
-            comboBoxLocale.Items.Add("fr");
-            comboBoxLocale.Items.Add("es");
-            comboBoxLocale.Items.Add("de");
-            comboBoxLocale.Items.Add("it");
-            comboBoxLocale.Items.Add("pt");
-            comboBoxLocale.Items.Add("ru");
+            comboBoxLocale.Items.Add("EN");
+            comboBoxLocale.Items.Add("FR");
+            comboBoxLocale.Items.Add("ES");
+            comboBoxLocale.Items.Add("DE");
+            comboBoxLocale.Items.Add("IT");
+            comboBoxLocale.Items.Add("PT");
+            comboBoxLocale.Items.Add("RU");
 
             comboBoxChoice.SelectedIndex = 0;
 
@@ -73,13 +70,13 @@ namespace WowHeadParser
 
             switch (selectedText)
             {
-                case "www": Properties.Settings.Default.localIndex = (int)LocaleConstant.enUS;  break;
-                case "fr":  Properties.Settings.Default.localIndex = (int)LocaleConstant.frFR;  break;
-                case "es":  Properties.Settings.Default.localIndex = (int)LocaleConstant.esES;  break;
-                case "de":  Properties.Settings.Default.localIndex = (int)LocaleConstant.deDE;  break;
-                case "it":  Properties.Settings.Default.localIndex = (int)LocaleConstant.itIT;  break;
-                case "pt":  Properties.Settings.Default.localIndex = (int)LocaleConstant.ptPT;  break;
-                case "ru":  Properties.Settings.Default.localIndex = (int)LocaleConstant.ruRU;  break;
+                case "EN": Properties.Settings.Default.localIndex = (int)LocaleConstant.enUS;  break;
+                case "FR":  Properties.Settings.Default.localIndex = (int)LocaleConstant.frFR;  break;
+                case "ES":  Properties.Settings.Default.localIndex = (int)LocaleConstant.esES;  break;
+                case "DE":  Properties.Settings.Default.localIndex = (int)LocaleConstant.deDE;  break;
+                case "IT":  Properties.Settings.Default.localIndex = (int)LocaleConstant.itIT;  break;
+                case "PT":  Properties.Settings.Default.localIndex = (int)LocaleConstant.ptPT;  break;
+                case "RU":  Properties.Settings.Default.localIndex = (int)LocaleConstant.ruRU;  break;
                 default:    Properties.Settings.Default.localIndex = (int)LocaleConstant.frFR;  break;
             }
 
@@ -153,12 +150,12 @@ namespace WowHeadParser
                 StartParsing();
 
                 setProgressBar(100);
-                timeLeftLabel.Text = "Terminé (" + (currentId + 1) + "/" + ids.Count + ")";
+                timeLeftLabel.Text = "Done (" + (currentId + 1) + "/" + ids.Count + ")";
             }
             else
             {
                 setProgressBar(100);
-                timeLeftLabel.Text = "Terminé";
+                timeLeftLabel.Text = "Done";
                 SetStartButtonEnableState(true);
                 currentId = 0;
             }
@@ -195,57 +192,57 @@ namespace WowHeadParser
                 // Creature
                 case 0:
                 {
-                    selectList.Items.Add("Is Dungeon/Raid Boss");
-                    selectList.Items.Add("template");
-                    selectList.Items.Add("health modifier");
-                    selectList.Items.Add("locale");
-                    selectList.Items.Add("vendor");
-                    selectList.Items.Add("loot");
-                    selectList.Items.Add("skinning");
-                    selectList.Items.Add("trainer");
-                    selectList.Items.Add("quest starter");
-                    selectList.Items.Add("quest ender");
-                    selectList.Items.Add("simple faction");
-                    selectList.Items.Add("money");
+                    selectList.Items.Add("Is Dungeon/Raid Boss.");
+                    selectList.Items.Add("Template.");
+                    selectList.Items.Add("Health modifier.");
+                    selectList.Items.Add("Locale.");
+                    selectList.Items.Add("Vendor.");
+                    selectList.Items.Add("Loot.");
+                    selectList.Items.Add("Skinning.");
+                    selectList.Items.Add("Trainer.");
+                    selectList.Items.Add("Quest starter.");
+                    selectList.Items.Add("Quest ender.");
+                    selectList.Items.Add("Simple faction.");
+                    selectList.Items.Add("Money.");
                     break;
                 }
                 // Gameobject
                 case 1:
                 {
-                    selectList.Items.Add("locale");
-                    selectList.Items.Add("loot");
-                    selectList.Items.Add("herbalism");
-                    selectList.Items.Add("mining");
+                    selectList.Items.Add("Locale.");
+                    selectList.Items.Add("Loot.");
+                    selectList.Items.Add("Herbalism.");
+                    selectList.Items.Add("Mining.");
                     break;
                 }
                 // Quest
                 case 2:
                 {
-                    selectList.Items.Add("starter/ender");
-                    selectList.Items.Add("serie");
-                    selectList.Items.Add("team");
-                    selectList.Items.Add("class");
+                    selectList.Items.Add("Starter/ender.");
+                    selectList.Items.Add("Serie.");
+                    selectList.Items.Add("Team.");
+                    selectList.Items.Add("Class.");
                     break;
                 }
                 // Item
                 case 3:
                 {
-                    selectList.Items.Add("create item");
-                    selectList.Items.Add("loot");
-                    selectList.Items.Add("dropped by");
-                    selectList.Items.Add("export pvp");
+                    selectList.Items.Add("Create item.");
+                    selectList.Items.Add("Loot.");
+                    selectList.Items.Add("Dropped by.");
+                    selectList.Items.Add("Export PvP.");
                     break;
                 }
                 // Zone
                 case 4:
                 {
-                    selectList.Items.Add("Fishing");
+                    selectList.Items.Add("Fishing.");
                     break;
                 }
                 // Marché Noir
                 case 5:
                 {
-                    selectList.Items.Add("Débug");
+                    selectList.Items.Add("Debug");
                     break;
                 }
             }
