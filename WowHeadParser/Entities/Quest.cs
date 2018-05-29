@@ -1,6 +1,3 @@
-﻿/*
- * * Created by Traesh for AshamaneProject (https://github.com/AshamaneProject)
- */
 using Newtonsoft.Json;
 using Sql;
 using System;
@@ -226,23 +223,23 @@ namespace WowHeadParser.Entities
         {
             String sqlRequest = "";
 
-            if (IsCheckboxChecked("starter/ender"))
+            if (IsCheckboxChecked("Starter/ender."))
             {
                 sqlRequest += m_builderStarter.ToString() + m_builderEnder.ToString();
             }
 
-            if (IsCheckboxChecked("serie"))
+            if (IsCheckboxChecked("Serie."))
             {
                 sqlRequest += m_builderSerieWithPrevious.ToString();
                 sqlRequest += m_builderSerieWithoutPrevious.ToString();
             }
 
-            if (IsCheckboxChecked("team"))
+            if (IsCheckboxChecked("Team."))
             {
                 sqlRequest += m_builderRequiredTeam.ToString();
             }
 
-            if (IsCheckboxChecked("class"))
+            if (IsCheckboxChecked("Class."))
             {
                 sqlRequest += m_builderRequiredClass.ToString();
             }
