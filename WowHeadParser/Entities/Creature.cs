@@ -1,6 +1,3 @@
-﻿/*
- * * Created by Traesh for AshamaneProject (https://github.com/AshamaneProject)
- */
 using Newtonsoft.Json;
 using Sql;
 using System;
@@ -419,7 +416,7 @@ namespace WowHeadParser.Entities
                 return returnSql;
 
             // Creature Template
-            if (IsCheckboxChecked("template"))
+            if (IsCheckboxChecked("Template."))
             {
                 m_creatureTemplateBuilder = new SqlBuilder("creature_template", "entry");
                 m_creatureTemplateBuilder.SetFieldsNames("minlevel", "maxlevel", "name", "subname", "modelid1", "rank", "type", "family");
@@ -428,7 +425,7 @@ namespace WowHeadParser.Entities
                 returnSql += m_creatureTemplateBuilder.ToString() + "\n";
             }
 
-            if (IsCheckboxChecked("health modifier") && m_creatureTemplateData.health != null)
+            if (IsCheckboxChecked("Health modifier.") && m_creatureTemplateData.health != null)
             {
                 SqlBuilder builder = new SqlBuilder("creature_template", "entry", SqlQueryType.Update);
                 builder.SetFieldsNames("HealthModifier");
@@ -440,7 +437,7 @@ namespace WowHeadParser.Entities
             }
 
             // faction
-            if (IsCheckboxChecked("simple faction"))
+            if (IsCheckboxChecked("Simple faction."))
             {
                 SqlBuilder m_creatureFactionBuilder = new SqlBuilder("creature_template", "entry", SqlQueryType.Update);
                 m_creatureFactionBuilder.SetFieldsNames("faction");
@@ -450,7 +447,7 @@ namespace WowHeadParser.Entities
             }
 
             // Creature Template
-            if (IsCheckboxChecked("money"))
+            if (IsCheckboxChecked("Money."))
             {
                 SqlBuilder m_creatureMoneyBuilder = new SqlBuilder("creature_template", "entry", SqlQueryType.Update);
                 m_creatureMoneyBuilder.SetFieldsNames("mingold", "maxgold");
@@ -460,7 +457,7 @@ namespace WowHeadParser.Entities
             }
 
             // Locales
-            if (IsCheckboxChecked("locale"))
+            if (IsCheckboxChecked("Locale."))
             {
                 LocaleConstant localeIndex = (LocaleConstant)Properties.Settings.Default.localIndex;
 
@@ -484,7 +481,7 @@ namespace WowHeadParser.Entities
                 }
             }
 
-            if (IsCheckboxChecked("vendor") && m_npcVendorDatas != null)
+            if (IsCheckboxChecked("Vendor.") && m_npcVendorDatas != null)
             {
                 m_npcVendorBuilder = new SqlBuilder("npc_vendor", "entry", SqlQueryType.DeleteInsert);
                 m_npcVendorBuilder.SetFieldsNames("slot", "item", "maxcount", "incrtime", "ExtendedCost", "type", "PlayerConditionID");
@@ -495,7 +492,7 @@ namespace WowHeadParser.Entities
                 returnSql += m_npcVendorBuilder.ToString() + "\n";
             }
 
-            if (IsCheckboxChecked("loot") && m_creatureLootDatas != null)
+            if (IsCheckboxChecked("Loot.") && m_creatureLootDatas != null)
             {
                 bool referenceAdded = false;
                 int maxReferenceLoot = 2; // A voir si on peut trouver
@@ -530,7 +527,7 @@ namespace WowHeadParser.Entities
                     int maxLootCount = creatureLootData.stack.Length >= 2 ? creatureLootData.stack[1] : minLootCount;
 
                     // If bonuses, certainly an important loot, set to references
-                    if (!IsCheckboxChecked("Is Dungeon/Raid Boss") || (creatureLootItemData == null || creatureLootItemData.bonustrees == null))
+                    if (!IsCheckboxChecked("Is Dungeon/Raid Boss.") || (creatureLootItemData == null || creatureLootItemData.bonustrees == null))
                     {
                         switch (creatureLootData.mode)
                         {
@@ -592,7 +589,7 @@ namespace WowHeadParser.Entities
                 returnSql += m_creatureReferenceLootBuilder.ToString() + "\n";
             }
 
-            if (IsCheckboxChecked("skinning") && m_creatureSkinningDatas != null)
+            if (IsCheckboxChecked("Skinning.") && m_creatureSkinningDatas != null)
             {
                 m_creatureSkinningBuilder = new SqlBuilder("skinning_loot_template", "entry", SqlQueryType.DeleteInsert);
                 m_creatureSkinningBuilder.SetFieldsNames("Item", "Reference", "Chance", "QuestRequired", "LootMode", "GroupId", "MinCount", "MaxCount", "Comment");
@@ -615,7 +612,7 @@ namespace WowHeadParser.Entities
                 returnSql += m_creatureSkinningBuilder.ToString() + "\n";
             }
 
-            if (IsCheckboxChecked("trainer") && m_creatureTrainerDatas != null)
+            if (IsCheckboxChecked("Trainer.") && m_creatureTrainerDatas != null)
             {
                 m_creatureTrainerBuilder = new SqlBuilder("npc_trainer", "entry", SqlQueryType.DeleteInsert);
                 m_creatureTrainerBuilder.SetFieldsNames("spell", "spellcost", "reqskill", "reqskillvalue", "reqlevel");
@@ -630,7 +627,7 @@ namespace WowHeadParser.Entities
                 returnSql += m_creatureTrainerBuilder.ToString() + "\n";
             }
 
-            if (IsCheckboxChecked("quest starter") && m_creatureQuestStarterDatas != null)
+            if (IsCheckboxChecked("Quest starter.") && m_creatureQuestStarterDatas != null)
             {
                 m_creatureQuestStarterBuilder = new SqlBuilder("creature_queststarter", "entry", SqlQueryType.DeleteInsert);
                 m_creatureQuestStarterBuilder.SetFieldsNames("quest");
@@ -641,7 +638,7 @@ namespace WowHeadParser.Entities
                 returnSql += m_creatureQuestStarterBuilder.ToString() + "\n";
             }
 
-            if (IsCheckboxChecked("quest ender") && m_creatureQuestEnderDatas != null)
+            if (IsCheckboxChecked("Quest ender.") && m_creatureQuestEnderDatas != null)
             {
                 m_creatureQuestEnderBuilder = new SqlBuilder("creature_questender", "entry", SqlQueryType.DeleteInsert);
                 m_creatureQuestEnderBuilder.SetFieldsNames("quest");
